@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mustang Awards 2027</title>
+<meta name="description" content="The SMU Mustang Awards, a black-tie evening honoring SMU student-athletes. May 7, 2027 at Tower Club, downtown Dallas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A1C52;        /* midnight cobalt, page background */
+    --cobalt: #1747B5;     /* true cobalt */
+    --cobalt-soft: #2A5BCB;
+    --gold: #C9A55A;       /* antique gold */
+    --gold-light: #E6CF95;
+    --ivory: #F6F1E6;
+    --mist: #B9C6E6;
+    --serif: "Gilda Display", "Didot", Georgia, serif;
+    --sans: "Jost", "Futura", "Century Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--ivory);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 64px;
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+  .presenter {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: .8rem;
+    letter-spacing: .32em;
+    color: var(--gold);
+    margin: 0 0 28px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(3.4rem, 8.5vw, 6.6rem);
+    line-height: .98;
+    margin: 0 0 32px;
+    color: var(--ivory);
+  }
+  h1 .the { display: block; font-size: .42em; color: var(--gold-light); margin-bottom: .2em; letter-spacing: .02em; }
+  .sprig { display: block; width: 150px; height: 28px; margin: 0 0 28px; color: var(--gold); }
+  .when {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .where { color: var(--mist); margin: 0 0 40px; }
+  .button {
+    display: inline-block;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: .95rem;
+    letter-spacing: .08em;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 16px 34px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    transition: background .25s, color .25s;
+  }
+  .button:hover { background: transparent; color: var(--gold-light); }
+
+  /* The arch: the one signature element */
+  .arch-frame {
+    position: relative;
+    justify-self: center;
+    width: min(100%, 440px);
+    aspect-ratio: 3 / 4.3;
+  }
+  .arch-frame::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    border: 1px solid var(--gold);
+    border-radius: 999px 999px 0 0;
+    opacity: .75;
+  }
+  .arch {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 999px 999px 0 0;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(230,207,149,.35), transparent 60%),
+      linear-gradient(180deg, var(--cobalt-soft), var(--ink));
+  }
+  .arch video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .arch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 65%, rgba(10,28,82,.45));
+    pointer-events: none;
+  }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 96px 0; border-top: 1px solid rgba(201,165,90,.28); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    line-height: 1.1;
+    margin: 0 0 48px;
+    text-align: center;
+  }
+
+  .schedule { max-width: 760px; margin: 0 auto; list-style: none; padding: 0; }
+  .schedule li {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(185,198,230,.18);
+    align-items: baseline;
+  }
+  .schedule li:last-child { border-bottom: 0; }
+  .time { font-family: var(--serif); font-size: 1.35rem; color: var(--gold-light); white-space: nowrap; }
+  .schedule h3 { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; margin: 0 0 4px; }
+  .schedule p { margin: 0; color: var(--mist); }
+
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .details h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; color: var(--gold-light); margin: 0 0 12px; }
+  .details p { margin: 0; color: var(--mist); }
+  .details strong { color: var(--ivory); font-weight: 400; }
+
+  /* ---------- X-factor: countdown ---------- */
+  .countdown-section { background: var(--cobalt); border-top: 0; text-align: center; }
+  .countdown-section h2 { margin-bottom: 40px; }
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 5vw, 64px);
+    flex-wrap: wrap;
+  }
+  .unit { min-width: 92px; }
+  .unit .num {
+    display: block;
+    font-family: var(--serif);
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
+    line-height: 1;
+    color: var(--ivory);
+    font-variant-numeric: tabular-nums;
+  }
+  .unit .label { display: block; margin-top: 10px; font-size: .95rem; color: var(--gold-light); letter-spacing: .06em; }
+  .countdown-note { margin: 40px 0 0; color: #DCE4F7; font-family: var(--serif); font-size: 1.25rem; }
+
+  .closing { text-align: center; }
+  .closing p { max-width: 34rem; margin: 0 auto 36px; color: var(--mist); }
+
+  footer { padding: 56px 0 120px; border-top: 1px solid rgba(201,165,90,.28); text-align: center; }
+  .xfactor { max-width: 34rem; margin: 0 auto; font-size: .92rem; color: var(--mist); }
+  .xfactor strong { color: var(--gold-light); font-weight: 400; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 56px; padding-top: 40px; text-align: center; }
+    .sprig { margin-left: auto; margin-right: auto; }
+    .arch-frame { width: min(84%, 380px); order: -1; margin-top: 16px; }
+    .details { grid-template-columns: 1fr; gap: 48px; }
+    .schedule li { grid-template-columns: 1fr; gap: 6px; text-align: center; }
+    .section { padding: 72px 0; }
+    .countdown { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 16px; max-width: 320px; margin: 0 auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .button { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap hero">
+  <div>
+    <p class="presenter">SMU ATHLETICS PRESENTS</p>
+    <h1><span class="the">The</span>Mustang Awards</h1>
+    <svg class="sprig" viewBox="0 0 150 28" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <path d="M4 14 H146"/>
+      <path d="M75 14 c-6 -9 -14 -11 -20 -10 c3 6 11 10 20 10z"/>
+      <path d="M75 14 c6 -9 14 -11 20 -10 c-3 6 -11 10 -20 10z"/>
+      <path d="M60 14 c-4 6 -10 8 -15 7 c2 -5 8 -7 15 -7z"/>
+      <path d="M90 14 c4 6 10 8 15 7 c-2 -5 -8 -7 -15 -7z"/>
+      <circle cx="75" cy="14" r="1.8" fill="currentColor"/>
+    </svg>
+    <p class="when">Friday, May 7, 2027<br>Four o'clock in the evening</p>
+    <p class="where">Tower Club, 48th floor of Santander Tower, downtown Dallas<br>Black tie</p>
+    <a class="button" href="awards.html">View the awards</a>
+  </div>
+
+  <div class="arch-frame">
+    <div class="arch">
+      <!-- Put your AI-generated video in this folder and name it hero.mp4 -->
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="hero.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section" aria-labelledby="evening-title">
+    <div class="wrap">
+      <h2 id="evening-title">The evening</h2>
+      <ol class="schedule">
+        <li>
+          <span class="time">4:00 – 5:00</span>
+          <div><h3>Cocktail hour</h3><p>Drinks and conversation above the Dallas skyline.</p></div>
+        </li>
+        <li>
+          <span class="time">5:00 – 6:00</span>
+          <div><h3>Awards ceremony</h3><p>Honoring the student-athletes and teams who defined the year.</p></div>
+        </li>
+        <li>
+          <span class="time">6:00 – 8:00</span>
+          <div><h3>Games</h3><p>Stay, play and celebrate together.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="details-title">
+    <div class="wrap">
+      <h2 id="details-title">Details</h2>
+      <div class="details">
+        <div>
+          <h3>Venue</h3>
+          <p><strong>Tower Club Dallas</strong><br>Santander Tower, 48th floor<br>1601 Elm Street, Dallas, Texas 75201</p>
+        </div>
+        <div>
+          <h3>Attire</h3>
+          <p><strong>Black tie</strong><br>Floor-length gowns, tuxedos<br>and dark suits</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section countdown-section" aria-labelledby="countdown-title">
+    <div class="wrap">
+      <h2 id="countdown-title">Until we celebrate</h2>
+      <div class="countdown" id="countdown" aria-live="off">
+        <div class="unit"><span class="num" id="cd-days">--</span><span class="label">days</span></div>
+        <div class="unit"><span class="num" id="cd-hours">--</span><span class="label">hours</span></div>
+        <div class="unit"><span class="num" id="cd-mins">--</span><span class="label">minutes</span></div>
+        <div class="unit"><span class="num" id="cd-secs">--</span><span class="label">seconds</span></div>
+      </div>
+      <p class="countdown-note" id="countdown-note">Friday, May 7, 2027, at 4:00 PM in Dallas</p>
+    </div>
+  </section>
+
+  <section class="section closing">
+    <div class="wrap">
+      <h2>Ten honors, one night</h2>
+      <p>From Freshman of the Year to the Athletic Director's R.U.N. Award, see every honor being presented this year.</p>
+      <a class="button" href="awards.html">View the awards</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="xfactor"><strong>A live countdown.</strong> The countdown above ticks down to the moment cocktail hour begins on May 7, 2027, in Dallas time, wherever you're viewing it from. Once the evening arrives, it switches to a welcome message.</p>
+  </div>
+</footer>
+
+<script>
+  // Keep the hero video playing (some browsers need a nudge)
+  const v = document.getElementById('heroVideo');
+  v.muted = true;
+  const tryPlay = () => v.play().catch(() => {});
+  tryPlay();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+
+  // Countdown to 4:00 PM Central Daylight Time (UTC-5), May 7, 2027
+  const target = new Date('2027-05-07T16:00:00-05:00').getTime();
+  const pad = n => String(n).padStart(2, '0');
+  const el = id => document.getElementById(id);
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => el(id).textContent = '00');
+      el('countdown-note').textContent = 'Welcome to the Mustang Awards. Enjoy the evening.';
+      clearInterval(timer);
+      return;
+    }
+    const s = Math.floor(diff / 1000);
+    el('cd-days').textContent = Math.floor(s / 86400);
+    el('cd-hours').textContent = pad(Math.floor(s % 86400 / 3600));
+    el('cd-mins').textContent = pad(Math.floor(s % 3600 / 60));
+    el('cd-secs').textContent = pad(s % 60);
+  }
+  const timer = setInterval(tick, 1000);
+  tick();
+</script>
+
+<!-- Chatling chatbot (Lab 3: Student Athlete Success Assistant) -->
+<script> window.chtlConfig = { chatbotId: "1315251223" } </script>
+<script async data-id="1315251223" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+</html>

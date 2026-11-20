@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Awards | Mustang Awards 2027</title>
+<meta name="description" content="The honors presented at the 2027 SMU Mustang Awards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A1C52;
+    --cobalt: #1747B5;
+    --gold: #C9A55A;
+    --gold-light: #E6CF95;
+    --ivory: #F6F1E6;
+    --mist: #B9C6E6;
+    --serif: "Gilda Display", "Didot", Georgia, serif;
+    --sans: "Jost", "Futura", "Century Gothic", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--ivory);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  nav { padding: 28px 0; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .home { font-family: var(--serif); font-size: 1.3rem; text-decoration: none; }
+  .back {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: .95rem;
+    letter-spacing: .06em;
+    color: var(--gold-light);
+    border: 1px solid rgba(201,165,90,.6);
+    border-radius: 999px;
+    padding: 9px 22px;
+    white-space: nowrap;
+    transition: background .25s, color .25s;
+  }
+  .back:hover { background: var(--gold); color: var(--ink); }
+
+  .intro { text-align: center; padding: 72px 0 80px; }
+  .presenter { font-weight: 400; font-size: .8rem; letter-spacing: .32em; color: var(--gold); margin: 0 0 24px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(3rem, 7.5vw, 5.4rem); line-height: 1; margin: 0 0 28px; }
+  .sprig { display: block; width: 150px; height: 28px; margin: 0 auto 28px; color: var(--gold); }
+  .intro p { max-width: 36rem; margin: 0 auto; color: var(--mist); font-size: 1.125rem; }
+
+  .awards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 72px;
+    border-top: 1px solid rgba(201,165,90,.35);
+  }
+  .awards li { padding: 36px 0; border-bottom: 1px solid rgba(185,198,230,.16); }
+  .awards h2 { font-family: var(--serif); font-weight: 400; font-size: 1.75rem; line-height: 1.2; margin: 0 0 10px; color: var(--ivory); }
+  .awards p { margin: 0; color: var(--mist); }
+
+  /* Signature award */
+  .signature {
+    margin: 112px 0 0;
+    background: var(--cobalt);
+    border-radius: 999px 999px 0 0;
+    padding: 150px 24px 88px;
+    text-align: center;
+    position: relative;
+  }
+  .signature::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(230,207,149,.55);
+    border-bottom: 0;
+    border-radius: 999px 999px 0 0;
+    pointer-events: none;
+  }
+  .signature .presenter { color: var(--gold-light); }
+  .signature h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 5.5vw, 3.8rem); line-height: 1.05; margin: 0 auto 20px; max-width: 13ch; }
+  .signature > p { max-width: 34rem; margin: 0 auto 56px; color: #DCE4F7; }
+  .run {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .run .letter { display: block; font-family: var(--serif); font-size: 4.4rem; line-height: 1; color: var(--gold-light); }
+  .run .word { display: block; font-family: var(--serif); font-size: 1.4rem; margin: 8px 0 6px; }
+  .run p { margin: 0; color: #DCE4F7; font-size: .98rem; }
+
+  .closing { text-align: center; padding: 96px 0 120px; }
+  .closing p { max-width: 32rem; margin: 0 auto 32px; color: var(--mist); }
+  .button {
+    display: inline-block;
+    font-weight: 500;
+    font-size: .95rem;
+    letter-spacing: .08em;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 16px 34px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    transition: background .25s, color .25s;
+  }
+  .button:hover { background: transparent; color: var(--gold-light); }
+
+  @media (max-width: 780px) {
+    .awards { grid-template-columns: 1fr; }
+    .run { grid-template-columns: 1fr; gap: 32px; }
+    .signature { padding: 88px 20px 64px; }
+    .intro { padding: 48px 0 56px; }
+    .home { font-size: 1.1rem; }
+    .back { padding: 8px 16px; font-size: .85rem; letter-spacing: .03em; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .back, .button { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="home" href="index.html">The Mustang Awards</a>
+    <a class="back" href="index.html">Back to the evening</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="intro">
+    <p class="presenter">MAY 7, 2027</p>
+    <h1>The Awards</h1>
+    <svg class="sprig" viewBox="0 0 150 28" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+      <path d="M4 14 H146"/>
+      <path d="M75 14 c-6 -9 -14 -11 -20 -10 c3 6 11 10 20 10z"/>
+      <path d="M75 14 c6 -9 14 -11 20 -10 c-3 6 -11 10 -20 10z"/>
+      <path d="M60 14 c-4 6 -10 8 -15 7 c2 -5 8 -7 15 -7z"/>
+      <path d="M90 14 c4 6 10 8 15 7 c-2 -5 -8 -7 -15 -7z"/>
+      <circle cx="75" cy="14" r="1.8" fill="currentColor"/>
+    </svg>
+    <p>Each year the Mustang Awards close out the season by recognizing SMU student-athletes for what they've achieved in competition, in the classroom and in the community. These are the honors presented on the night.</p>
+  </header>
+
+  <ul class="awards">
+    <li>
+      <h2>Highest Team GPA</h2>
+      <p>Recognizes one men's and one women's program for earning the highest team grade point average across the spring and fall semesters.</p>
+    </li>
+    <li>
+      <h2>Student-Athlete Choice Award</h2>
+      <p>Chosen by fellow student-athletes for the teammate they see as a true role model in the community.</p>
+    </li>
+    <li>
+      <h2>Individual and Team Community Award</h2>
+      <p>Honors the student-athlete and the team whose service has made a lasting difference across the SMU and Dallas communities.</p>
+    </li>
+    <li>
+      <h2>Perseverance Award</h2>
+      <p>For student-athletes who showed remarkable determination in overcoming personal, medical or academic setbacks while staying in good academic standing.</p>
+    </li>
+    <li>
+      <h2>Sportsmanship Award</h2>
+      <p>Celebrates student-athletes who compete with class, respect and integrity every time they step into the arena.</p>
+    </li>
+    <li>
+      <h2>Red &amp; Blue Award</h2>
+      <p>For the student-athletes with the most passion and spirit for SMU Athletics, who go above and beyond to support fellow athletes and the department.</p>
+    </li>
+    <li>
+      <h2>Newcomer of the Year</h2>
+      <p>Recognizes first-year transfer student-athletes who made an immediate impact in their sport.</p>
+    </li>
+    <li>
+      <h2>Freshman of the Year</h2>
+      <p>Honors first-year student-athletes whose arrival on the Hilltop made an immediate difference for their team.</p>
+    </li>
+    <li>
+      <h2>Student-Athlete of the Year</h2>
+      <p>For team leaders who reached a high level of competitive success, kept up their academics, and lifted their teammates while representing SMU well.</p>
+    </li>
+  </ul>
+
+  <section class="signature" aria-labelledby="run-title">
+    <p class="presenter">THE SIGNATURE HONOR</p>
+    <h2 id="run-title">Athletic Director's R.U.N. Award</h2>
+    <p>Presented by the SMU Athletic Director to one male and one female student-athlete who embody the drive and determination of a Mustang.</p>
+    <div class="run">
+      <div>
+        <span class="letter">R</span>
+        <span class="word">Relentless</span>
+        <p>In the pursuit of winning, on and off the field.</p>
+      </div>
+      <div>
+        <span class="letter">U</span>
+        <span class="word">Unstoppable</span>
+        <p>In overcoming personal, academic and athletic challenges.</p>
+      </div>
+      <div>
+        <span class="letter">N</span>
+        <span class="word">Never satisfied</span>
+        <p>Always reaching beyond good for something greater.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p>Join us at Tower Club on Friday, May 7, 2027, as these honors are presented.</p>
+    <a class="button" href="index.html">See the evening's details</a>
+  </section>
+</main>
+
+<!-- Chatling chatbot (Lab 3: Student Athlete Success Assistant) -->
+<script> window.chtlConfig = { chatbotId: "1315251223" } </script>
+<script async data-id="1315251223" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+</html>
